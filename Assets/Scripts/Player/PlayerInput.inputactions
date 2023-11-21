@@ -33,7 +33,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Fire",
+                    "name": "Attack",
                     "type": "Button",
                     "id": "69513385-b222-4a41-92e9-151531caf5e1",
                     "expectedControlType": "Button",
@@ -42,7 +42,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Dash",
+                    "name": "Run",
                     "type": "Button",
                     "id": "320a8a18-02f1-4574-823d-022b11f86f07",
                     "expectedControlType": "Button",
@@ -224,7 +224,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",
-                    "action": "Fire",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -235,7 +235,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "Fire",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -246,7 +246,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Touch",
-                    "action": "Fire",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -257,7 +257,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Joystick",
-                    "action": "Fire",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -268,7 +268,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "XR",
-                    "action": "Fire",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -290,7 +290,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Dash",
+                    "action": "Run",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

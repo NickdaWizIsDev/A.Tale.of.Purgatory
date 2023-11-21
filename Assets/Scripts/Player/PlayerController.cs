@@ -10,9 +10,9 @@ public class PlayerController : MonoBehaviour
     [Header ("Game Objects")]
     public Canvas gameOver;
     public AudioSource music;
+    public TouchingDirections touching;
     private CharacterController controller;
     private Rigidbody rb;
-    private TouchingDirections touching;
     private Animator animator;
     private Damageable damageable;
 
@@ -157,16 +157,6 @@ public class PlayerController : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        //Music trigger
-        if (collision.gameObject.CompareTag("MusicPlayer"))
-        {
-            music.PlayDelayed(0.5f);
-            Destroy(collision.gameObject);
-        }
-    }
-
     private void FixedUpdate()
     {
         //Hit check
@@ -208,7 +198,7 @@ public class PlayerController : MonoBehaviour
     public void OnJump(InputAction.CallbackContext context)
     {
         //Double jump allowed thanks to jumpCount < 2
-        if (context.started && jumpCount < 2)
+        if (context.started && jumpCount < 1)
         {
             velocity.y = Mathf.Sqrt(-2f * jumpImpulse * -9.81f);
             animator.SetTrigger(AnimationStrings.jump);
@@ -221,10 +211,24 @@ public class PlayerController : MonoBehaviour
 
             jumpCount++;
         }
+        else if (context.started && jumpCount < 2)
+        {
+            velocity.y = Mathf.Sqrt(-2f * jumpImpulse * -9.81f);
+            animator.SetTrigger(AnimationStrings.jump2);
+
+            Vector2 jumpDir = Vector3.up;
+            Vector2 jumpForce = jumpDir * jumpImpulse;
+
+            rb.AddForce(jumpForce, ForceMode.Impulse);
+            rb.velocity = new Vector3(controller.velocity.x, velocity.y, 0);
+
+            jumpCount++;
+
+        }
     }
 
-    //It's still called Dash but it's actually just a sprint button
-    public void OnDash(InputAction.CallbackContext context)
+    //Sprint button
+    public void OnRun(InputAction.CallbackContext context)
     {
         if (context.started)
         {
