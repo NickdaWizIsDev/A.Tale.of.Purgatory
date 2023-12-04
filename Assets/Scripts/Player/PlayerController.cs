@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     public AudioSource audioSource;
 
     [Header ("Movement")]
-    Vector2 moveInput;
+    public Vector2 moveInput;
     private Vector3 velocity;
     public float walkSpeed = 7.5f;
     public float sprintSpeed = 12f;
@@ -168,8 +168,9 @@ public class PlayerController : MonoBehaviour
 
     public void OnControllerColliderHit(ControllerColliderHit hit)
     {
+        if(controller.collisionFlags == CollisionFlags.Below)
+            jumpCount = 0;
         //Jump reset
-        jumpCount = 0;
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -177,7 +178,7 @@ public class PlayerController : MonoBehaviour
         //Input handling; moveIpnput is 1 if pressing right, -1 if pressing left.
         moveInput = context.ReadValue<Vector2>();
         //IsMoving depends on the moveInput not being 0.
-        isMoving = moveInput != Vector2.zero;
+        IsMoving = moveInput.x != 0f;
 
         SetFacingDirection(moveInput);
     }
