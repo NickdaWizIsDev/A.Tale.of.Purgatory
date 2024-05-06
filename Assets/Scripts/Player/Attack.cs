@@ -110,4 +110,19 @@ public class Attack : MonoBehaviour
             Destroy(powerSlash, 1.3f);
         }
     }
+
+    public void OnThunderSpell(InputAction.CallbackContext context)
+    {
+        animator.SetTrigger(AnimationStrings.w);
+    }
+
+    public void OnFireSpell(InputAction.CallbackContext context)
+    {
+        animator.SetTrigger(AnimationStrings.e);
+    }
+
+    public void OnUltimate(InputAction.CallbackContext context)
+    {
+        animator.SetTrigger(AnimationStrings.r);
+    }
 }
