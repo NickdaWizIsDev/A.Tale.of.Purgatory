@@ -15,14 +15,21 @@ public class Attack : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip attack;
     public AudioClip altAttack;
+    
+    public PlayerMana mana;
+
+    public int damage;
+
+    [Header("Power Slash")]
     public AudioClip bigSlash;
     public GameObject slash;
-    public PlayerMana mana;
     public Transform fireP;
     public Vector3 speed;
-    public int damage;
     public float slashTimer;
     public float slashCD;
+
+    [Header("Thunder Spell")]
+    public GameObject lightningBolt;
 
     private void Awake()
     {
@@ -113,7 +120,17 @@ public class Attack : MonoBehaviour
 
     public void OnThunderSpell(InputAction.CallbackContext context)
     {
-        animator.SetTrigger(AnimationStrings.w);
+        if (context.started)
+        {
+            GameObject enemy = FindAnyObjectByType<Wanderer>().gameObject;
+            Vector3 targetPos = new Vector3(enemy.transform.position.x, (enemy.transform.position.y + 5), 0);
+            if(enemy != null)
+            {
+                GameObject bolt = Instantiate(lightningBolt, targetPos, Quaternion.identity);
+                bolt.GetComponent<Rigidbody>().velocity = new Vector3(0, -20, 0);
+                Destroy(bolt, 0.7f);
+            }
+        }
     }
 
     public void OnFireSpell(InputAction.CallbackContext context)

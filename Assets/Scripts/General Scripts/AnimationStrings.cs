@@ -14,7 +14,6 @@ public class AnimationStrings : MonoBehaviour
     internal static string jump2 = "jump2";
     internal static string atk = "atk";
     internal static string airAtk = "airAtk";
-    internal static string w = "w";
     internal static string e = "e";
     internal static string r = "r";
     internal static string canMove = "canMove";
