@@ -31,7 +31,7 @@ public class Damageable : MonoBehaviour
         {
             health = value;
 
-            if (health <= 0)
+            if (health <= 0f)
             {
                 IsAlive = false;
             }
@@ -50,21 +50,32 @@ public class Damageable : MonoBehaviour
         {
             isAlive = value;
             animator.SetBool(AnimationStrings.isAlive, value);
-            Debug.Log("IsAlive was set to " + value);
+            Debug.Log(gameObject.name + "'s IsAlive was set to " + value);
 
-            if (!isAlive && !gameObject.CompareTag("Player"))
+            if (!isAlive && gameObject.CompareTag("Projectile"))
             {
+                Destroy(gameObject, 0.1f);
+            }
+
+            else if (!isAlive && !gameObject.CompareTag("Player"))
+            {
+                //Restore mana for the player
+                PlayerMana mana = FindAnyObjectByType<PlayerMana>();
+                mana.Mana += 15;
+                Debug.Log("Restored 15 mana");
+
                 // Play death audio clip
                 if (deathAudioSource == null)
                 {
                     GameObject audioObject = new("Death Audio");
 
-                    AudioSource audioSource = audioObject.AddComponent<AudioSource>();
+                    AudioSource deathAudioSource = audioObject.AddComponent<AudioSource>();
+                    deathAudioSource.outputAudioMixerGroup = audioSource.outputAudioMixerGroup;
 
-                    audioSource.PlayOneShot(deathClip, 0.3f);
-                    Destroy(audioObject, 0.4f);
+                    deathAudioSource.PlayOneShot(deathClip, 0.3f);
+                    Destroy(audioObject, deathClip.length);
                 }
-                Destroy(gameObject, 0.5f);
+                Destroy(gameObject, 1f);
             }
         }
     }
@@ -98,7 +109,7 @@ public class Damageable : MonoBehaviour
 
     private void Awake()
     {
-        animator = GetComponent<Animator>();
+        animator = GetComponentInParent<Animator>();
     }
 
     private void Start()

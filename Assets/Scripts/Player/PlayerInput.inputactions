@@ -51,9 +51,36 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Interact",
+                    "name": "Ultimate",
                     "type": "Button",
-                    "id": "b4ea8fc8-408b-47f1-beae-8700018996a6",
+                    "id": "46116b00-834f-4af2-ac96-ec3ae8273322",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Fire Spell",
+                    "type": "Button",
+                    "id": "c62ecd64-a460-4453-94cf-c17ea05d60f7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Thunder Spell",
+                    "type": "Button",
+                    "id": "2e1e613d-c15c-4446-92f5-2e869d8472b4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Power Slash",
+                    "type": "Button",
+                    "id": "13c55bbc-c415-4b59-aebb-c38293a50faf",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -305,12 +332,45 @@
                 },
                 {
                     "name": "",
-                    "id": "ef962c81-eda9-4378-952c-00a693b48bd1",
-                    "path": "<Mouse>/rightButton",
+                    "id": "e9fdc28b-b5ef-49ea-a3fb-aecb0fb25c19",
+                    "path": "<Keyboard>/r",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Interact",
+                    "groups": "",
+                    "action": "Ultimate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6fbf149d-4766-45aa-b96f-e3751a310d8a",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Fire Spell",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c928ff0a-3376-48d6-9cd2-b43bc19909fa",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Thunder Spell",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3c7ed5de-66e2-4e80-96a2-bf924d7390a1",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Power Slash",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

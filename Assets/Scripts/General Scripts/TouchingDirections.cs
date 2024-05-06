@@ -12,9 +12,6 @@ public class TouchingDirections : MonoBehaviour
     CharacterController touchingCol;
     Animator animator;
 
-    RaycastHit2D[] groundHits = new RaycastHit2D[5];
-    RaycastHit2D[] wallHits = new RaycastHit2D[5];
-
     [SerializeField]
     private bool isGrounded;
     public bool IsGrounded
@@ -32,8 +29,6 @@ public class TouchingDirections : MonoBehaviour
 
     [SerializeField]
     private bool isOnWall;
-
-    private Vector2 WallCheckDirection => gameObject.transform.localScale.x > 0 ? Vector2.right : Vector2.left;
     public bool IsOnWall
     {
         get
@@ -56,6 +51,6 @@ public class TouchingDirections : MonoBehaviour
     void FixedUpdate()
     {
         IsGrounded = touchingCol.isGrounded;
-        IsOnWall = touchingCol.collisionFlags == CollisionFlags.Sides;
+        IsOnWall = (touchingCol.collisionFlags & CollisionFlags.Sides) != 0;
     }
 }

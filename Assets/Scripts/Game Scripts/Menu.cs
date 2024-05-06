@@ -5,9 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
+    Animator animator;
+    private void Start()
+    {
+        Time.timeScale = 1f;
+        animator = GetComponent<Animator>();
+    }
+
     public void LoadSceneOne()
     {
-        SceneManager.LoadScene(1);
+        if (!DataManager.Instance.hasSeenIntro)
+            SceneManager.LoadScene(1);
+        else if (DataManager.Instance.hasSeenIntro)
+            SceneManager.LoadScene(2);
+    }
+
+    public void Trigger()
+    {
+        animator.SetTrigger(AnimationStrings.trigger1);
     }
 
     public void Quit()

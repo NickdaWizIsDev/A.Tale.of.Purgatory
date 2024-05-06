@@ -5,16 +5,21 @@ using UnityEngine;
 public class Damage : MonoBehaviour
 {
     Damageable damageable;
+    PlayerMana mana;
     public int damage;
 
     public void OnTriggerEnter(Collider other)
     {
-        damageable = other.gameObject.GetComponent<Damageable>();
-        if (damageable != null) { damageable.Hit(damage); }
-        else if(damageable == null)
+        damageable = other.gameObject.GetComponentInParent<Damageable>();
+        mana = other.gameObject.GetComponent<PlayerMana>();
+
+        if (damageable.isActiveAndEnabled)
         {
-            damageable = other.gameObject.GetComponentInParent<Damageable>();
-            if(damageable != null) { damageable.Hit(damage); }
+            damageable.Hit(damage);
+        }
+        else if (!damageable.isActiveAndEnabled)
+        {
+            mana.Hit(damage);
         }
     }
 }

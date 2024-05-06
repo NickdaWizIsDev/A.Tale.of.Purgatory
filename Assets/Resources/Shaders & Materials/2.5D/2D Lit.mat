@@ -10,6 +10,8 @@ Material:
   m_Name: 2D Lit
   m_Shader: {fileID: -6465566751694194690, guid: bbde60e79c68e4b48aafc92677a6eeec,
     type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 2
@@ -18,6 +20,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -46,7 +49,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _Emission_Color: {r: 0, g: 0, b: 5.992157, a: 1}
+    - _Emission_Color: {r: 0, g: 1.1428794, b: 19.844604, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &4861240409500917325
 MonoBehaviour:
@@ -60,4 +63,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  version: 5
+  version: 7

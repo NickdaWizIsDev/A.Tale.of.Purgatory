@@ -6,7 +6,7 @@ TextureImporter:
   serializedVersion: 12
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -36,8 +36,8 @@ TextureImporter:
     filterMode: 0
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
+    wrapU: 1
+    wrapV: 1
     wrapW: 0
   nPOTScale: 0
   lightmap: 0
@@ -53,7 +53,7 @@ TextureImporter:
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -234,8 +234,8 @@ TextureImporter:
       name: Main Sprite_Emission_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 512
+        x: 768
+        y: 640
         width: 128
         height: 128
       alignment: 0
@@ -255,7 +255,7 @@ TextureImporter:
       name: Main Sprite_Emission_7
       rect:
         serializedVersion: 2
-        x: 128
+        x: 0
         y: 512
         width: 128
         height: 128
@@ -276,7 +276,7 @@ TextureImporter:
       name: Main Sprite_Emission_8
       rect:
         serializedVersion: 2
-        x: 256
+        x: 128
         y: 512
         width: 128
         height: 128
@@ -297,7 +297,7 @@ TextureImporter:
       name: Main Sprite_Emission_9
       rect:
         serializedVersion: 2
-        x: 384
+        x: 256
         y: 512
         width: 128
         height: 128
@@ -318,7 +318,7 @@ TextureImporter:
       name: Main Sprite_Emission_10
       rect:
         serializedVersion: 2
-        x: 512
+        x: 384
         y: 512
         width: 128
         height: 128
@@ -339,7 +339,7 @@ TextureImporter:
       name: Main Sprite_Emission_11
       rect:
         serializedVersion: 2
-        x: 640
+        x: 512
         y: 512
         width: 128
         height: 128
@@ -360,8 +360,8 @@ TextureImporter:
       name: Main Sprite_Emission_12
       rect:
         serializedVersion: 2
-        x: 0
-        y: 384
+        x: 640
+        y: 512
         width: 128
         height: 128
       alignment: 0
@@ -381,8 +381,8 @@ TextureImporter:
       name: Main Sprite_Emission_13
       rect:
         serializedVersion: 2
-        x: 128
-        y: 384
+        x: 768
+        y: 512
         width: 128
         height: 128
       alignment: 0
@@ -402,7 +402,7 @@ TextureImporter:
       name: Main Sprite_Emission_14
       rect:
         serializedVersion: 2
-        x: 256
+        x: 0
         y: 384
         width: 128
         height: 128
@@ -423,7 +423,7 @@ TextureImporter:
       name: Main Sprite_Emission_15
       rect:
         serializedVersion: 2
-        x: 384
+        x: 128
         y: 384
         width: 128
         height: 128
@@ -444,7 +444,7 @@ TextureImporter:
       name: Main Sprite_Emission_16
       rect:
         serializedVersion: 2
-        x: 512
+        x: 256
         y: 384
         width: 128
         height: 128
@@ -465,7 +465,7 @@ TextureImporter:
       name: Main Sprite_Emission_17
       rect:
         serializedVersion: 2
-        x: 640
+        x: 384
         y: 384
         width: 128
         height: 128
@@ -486,8 +486,8 @@ TextureImporter:
       name: Main Sprite_Emission_18
       rect:
         serializedVersion: 2
-        x: 0
-        y: 256
+        x: 512
+        y: 384
         width: 128
         height: 128
       alignment: 0
@@ -507,8 +507,8 @@ TextureImporter:
       name: Main Sprite_Emission_19
       rect:
         serializedVersion: 2
-        x: 128
-        y: 256
+        x: 640
+        y: 384
         width: 128
         height: 128
       alignment: 0
@@ -528,8 +528,8 @@ TextureImporter:
       name: Main Sprite_Emission_20
       rect:
         serializedVersion: 2
-        x: 256
-        y: 256
+        x: 768
+        y: 384
         width: 128
         height: 128
       alignment: 0
@@ -549,7 +549,7 @@ TextureImporter:
       name: Main Sprite_Emission_21
       rect:
         serializedVersion: 2
-        x: 384
+        x: 0
         y: 256
         width: 128
         height: 128
@@ -570,7 +570,7 @@ TextureImporter:
       name: Main Sprite_Emission_22
       rect:
         serializedVersion: 2
-        x: 512
+        x: 128
         y: 256
         width: 128
         height: 128
@@ -591,6 +591,69 @@ TextureImporter:
       name: Main Sprite_Emission_23
       rect:
         serializedVersion: 2
+        x: 256
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afe27595f78785e43ab96239ebea37f4
+      internalID: -138346116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Sprite_Emission_24
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed4c6406161a29d4184225157c5486a5
+      internalID: -1717029515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Sprite_Emission_25
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cf74b117be441a4492b132fbba0d481
+      internalID: 1650686342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Sprite_Emission_26
+      rect:
+        serializedVersion: 2
         x: 640
         y: 256
         width: 128
@@ -602,14 +665,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5adec6d36db4c04d8f4ec188fbfd467
-      internalID: 1901406088
+      spriteID: fe5752e11b0b11d4c8d40e3e6be88255
+      internalID: -1335509096
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main Sprite_Emission_24
+      name: Main Sprite_Emission_27
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f36a6e4a2a8a864fa1b0eb506c029b8
+      internalID: 1250901148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Sprite_Emission_28
       rect:
         serializedVersion: 2
         x: 0
@@ -623,14 +707,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aed2ecca1d9c0294c907d20020e8561d
-      internalID: -131753331
+      spriteID: 61262ed8c3ff09347bcbbeadc70efd39
+      internalID: 301043541
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main Sprite_Emission_25
+      name: Main Sprite_Emission_29
       rect:
         serializedVersion: 2
         x: 128
@@ -644,14 +728,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 85035c0b7c179f1409a63debe8eeef40
-      internalID: 778234185
+      spriteID: 6a9f4274b82461b41b8c5045ceea2b6d
+      internalID: 840416444
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main Sprite_Emission_26
+      name: Main Sprite_Emission_30
       rect:
         serializedVersion: 2
         x: 256
@@ -665,14 +749,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0c12e0f2f8d52a4dad3434e8de487db
-      internalID: -804261209
+      spriteID: 30130779c206c7a45a810202a9d10e04
+      internalID: -231083848
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main Sprite_Emission_27
+      name: Main Sprite_Emission_31
       rect:
         serializedVersion: 2
         x: 384
@@ -686,14 +770,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: caf3c55a5d5e71848bbc836a963e1f54
-      internalID: -122477216
+      spriteID: fd2b390e42d00a64787597b854b9ee44
+      internalID: 992651353
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main Sprite_Emission_28
+      name: Main Sprite_Emission_32
       rect:
         serializedVersion: 2
         x: 512
@@ -707,14 +791,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d09fbc221209d99499ac54b393afa690
-      internalID: -2055070076
+      spriteID: d60c6913296962a4a806370bab0de80b
+      internalID: -89382421
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main Sprite_Emission_29
+      name: Main Sprite_Emission_33
       rect:
         serializedVersion: 2
         x: 640
@@ -728,14 +812,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac47a008888cb044c849aa23ac44c0d7
-      internalID: 629440956
+      spriteID: 4d45dbff627a5cf4da7fedc317e43064
+      internalID: -424890086
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main Sprite_Emission_30
+      name: Main Sprite_Emission_34
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20b5e46467dfc3347bea40db62637379
+      internalID: -494286615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Main Sprite_Emission_35
       rect:
         serializedVersion: 2
         x: 0
@@ -749,14 +854,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 831523b1ac205b641a7849a2a9dd303f
-      internalID: 805378773
+      spriteID: 5e65bfa794cfac04daa41fde2f2a0aa8
+      internalID: 247902675
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main Sprite_Emission_31
+      name: Main Sprite_Emission_36
       rect:
         serializedVersion: 2
         x: 128
@@ -770,14 +875,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9671cfa748f0e0a4c88fb8cbd7905d60
-      internalID: 2050421792
+      spriteID: ae26524538a33a74fac326176c44d719
+      internalID: 888817692
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Main Sprite_Emission_32
+      name: Main Sprite_Emission_37
       rect:
         serializedVersion: 2
         x: 256
@@ -791,8 +896,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5421274ecb001b34db5faff15229fa99
-      internalID: 1505310577
+      spriteID: c10e4b6c60fd9ea4a82190dceb6a3312
+      internalID: -399917194
       vertices: []
       indices: 
       edges: []
@@ -824,17 +929,22 @@ TextureImporter:
       Main Sprite_Emission_20: 802364152
       Main Sprite_Emission_21: -1023944902
       Main Sprite_Emission_22: 1714105593
-      Main Sprite_Emission_23: 1901406088
-      Main Sprite_Emission_24: -131753331
-      Main Sprite_Emission_25: 778234185
-      Main Sprite_Emission_26: -804261209
-      Main Sprite_Emission_27: -122477216
-      Main Sprite_Emission_28: -2055070076
-      Main Sprite_Emission_29: 629440956
+      Main Sprite_Emission_23: -138346116
+      Main Sprite_Emission_24: -1717029515
+      Main Sprite_Emission_25: 1650686342
+      Main Sprite_Emission_26: -1335509096
+      Main Sprite_Emission_27: 1250901148
+      Main Sprite_Emission_28: 301043541
+      Main Sprite_Emission_29: 840416444
       Main Sprite_Emission_3: -623572158
-      Main Sprite_Emission_30: 805378773
-      Main Sprite_Emission_31: 2050421792
-      Main Sprite_Emission_32: 1505310577
+      Main Sprite_Emission_30: -231083848
+      Main Sprite_Emission_31: 992651353
+      Main Sprite_Emission_32: -89382421
+      Main Sprite_Emission_33: -424890086
+      Main Sprite_Emission_34: -494286615
+      Main Sprite_Emission_35: 247902675
+      Main Sprite_Emission_36: 888817692
+      Main Sprite_Emission_37: -399917194
       Main Sprite_Emission_4: -1924723717
       Main Sprite_Emission_5: 872944364
       Main Sprite_Emission_6: -1727568434

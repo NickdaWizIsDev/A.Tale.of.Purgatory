@@ -5,14 +5,10 @@ using UnityEditor;
 
 public class TowerRise : MonoBehaviour
 {
-    Animator animator;
+    public Animator animator;
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
-    }
-    public void Rise()
-    {
-        animator.SetTrigger(AnimationStrings.trigger1);
     }
 }

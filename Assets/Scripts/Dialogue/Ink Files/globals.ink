@@ -1,0 +1,1 @@
+EXTERNAL setTrigger(triggerName)

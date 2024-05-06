@@ -8,9 +8,8 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [Header ("Game Objects")]
-    public Canvas gameOver;
-    public AudioSource music;
     public TouchingDirections touching;
+    public Canvas pauseCanvas;
     private CharacterController controller;
     private Rigidbody rb;
     private Animator animator;
@@ -18,6 +17,8 @@ public class PlayerController : MonoBehaviour
 
     [Header ("Audio")]
     public AudioSource audioSource;
+    public AudioClip walk1;
+    public AudioClip walk2;
 
     [Header ("Movement")]
     public Vector2 moveInput;
@@ -122,8 +123,20 @@ public class PlayerController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
+    private void Start()
+    {
+        Time.timeScale = 1f;
+        pauseCanvas.gameObject.SetActive(false);
+    }
+
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            pauseCanvas.gameObject.SetActive(true);
+            Time.timeScale = 0f;
+        }
+
         //Update Animator params
         animator.SetFloat(AnimationStrings.yVelocity, controller.velocity.y);
         animator.SetBool(AnimationStrings.isGrounded, touching.IsGrounded);
@@ -140,14 +153,6 @@ public class PlayerController : MonoBehaviour
         if (touching.IsOnWall && controller.velocity.y < 0)
         {
             velocity.y = -1f;
-        }
-
-        //Death check
-        if (!damageable.IsAlive)
-        {
-            Time.timeScale = 0f;
-            gameOver.gameObject.SetActive(true);
-            music.Stop();
         }
 
         //Movement
@@ -175,12 +180,30 @@ public class PlayerController : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        //Input handling; moveIpnput is 1 if pressing right, -1 if pressing left.
-        moveInput = context.ReadValue<Vector2>();
-        //IsMoving depends on the moveInput not being 0.
-        IsMoving = moveInput.x != 0f;
+        if (DialogueManager.GetInstance() != null)
+        {
+            if (DialogueManager.GetInstance().DialogueIsPlaying)
+            {
+                animator.SetBool(AnimationStrings.canMove, false);
+            }
+        }        
 
-        SetFacingDirection(moveInput);
+        if (context.canceled)
+        {
+            moveInput = Vector2.zero;
+            IsMoving = false;
+        }
+
+        if (Time.timeScale > 0 && CanMove && context.started) 
+        {
+            //Input handling; moveInput is 1 if pressing right, -1 if pressing left.
+            moveInput = context.ReadValue<Vector2>();
+            //IsMoving depends on the moveInput not being 0.
+            IsMoving = moveInput.x != 0f;
+
+            SetFacingDirection(moveInput); 
+        }
+        
     }
 
     //What the name says
@@ -198,8 +221,16 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
+        if (DialogueManager.GetInstance() != null)
+        {
+            if (DialogueManager.GetInstance().DialogueIsPlaying)
+            {
+                return;
+            }
+        }
+
         //Double jump allowed thanks to jumpCount < 2
-        if (context.started && jumpCount < 1)
+        if (context.started && jumpCount < 1 && CanMove)
         {
             velocity.y = Mathf.Sqrt(-2f * jumpImpulse * -9.81f);
             animator.SetTrigger(AnimationStrings.jump);
@@ -239,5 +270,42 @@ public class PlayerController : MonoBehaviour
         {
             isRunning = false;
         }
+    }
+
+    public void Trigger(string triggerName)
+    {
+        if (triggerName.Equals("trigger2"))
+        {
+            animator.SetTrigger(triggerName);
+            GameObject.FindAnyObjectByType<TowerRise>().animator.SetTrigger(triggerName);
+        }
+        animator.SetTrigger(triggerName);
+    }
+
+    public void TimeStop()
+    {
+        Time.timeScale = Mathf.Lerp(1, 0f, 2);
+    }
+
+    public void SwingSound()
+    {
+        audioSource.clip = GetComponentInChildren<Attack>().attack;
+        audioSource.Play();
+    }
+    public void AltSwingSound()
+    {
+        audioSource.clip = GetComponentInChildren<Attack>().altAttack;
+        audioSource.Play();
+    }
+
+    public void SlashSound()
+    {
+        audioSource.clip = GetComponentInChildren<Attack>().bigSlash;
+        audioSource.Play();
+    }
+
+    public void Walk()
+    {
+        audioSource.PlayOneShot(walk1);
     }
 }
