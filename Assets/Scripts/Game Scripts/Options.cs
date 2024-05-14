@@ -13,6 +13,8 @@ public class Options : MonoBehaviour
     public float volume;
     public Slider volumeSlider;
 
+    Animator anim;
+
     private void Awake()
     {
         SetVolume(DataManager.Instance.volume);
@@ -21,9 +23,19 @@ public class Options : MonoBehaviour
 
     private void Start()
     {
+        anim = GetComponentInParent<Animator>();
+
         if(SceneManager.GetActiveScene().buildIndex > 1)
         {
             DataManager.Instance.hasSeenIntro = true;
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            pause.Trigger("unpause");
         }
     }
 

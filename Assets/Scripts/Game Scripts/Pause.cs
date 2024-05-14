@@ -9,23 +9,40 @@ public class Pause : MonoBehaviour
     public Button restart;
     public GameObject panel;
 
+    public Animator anim;
+
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Time.timeScale = Mathf.Lerp(0, 1, 2);
-            gameObject.SetActive(false);
+            Trigger("unpause");
+            Deactivate();
         }
 
-        if (!DataManager.Instance.hasSeenIntro)
-            restart.interactable = false;
-        else if (DataManager.Instance.hasSeenIntro)
-            restart.interactable = true;
+        if(DataManager.Instance != null)
+        {
+            if (!DataManager.Instance.hasSeenIntro)
+                restart.interactable = false;
+            else if (DataManager.Instance.hasSeenIntro)
+                restart.interactable = true;
+        }        
     }
 
-    public void Back()
+    public void GamePause()
     {
-        Time.timeScale = 1f;
+        Time.timeScale = 0f;
+        gameObject.SetActive(true);
+        Trigger("pause");
+    }
+
+    public void Deactivate()
+    {
+        Time.timeScale = Mathf.Lerp(0.1f, 1, 2);
         gameObject.SetActive(false);
     }
 
@@ -39,18 +56,8 @@ public class Pause : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    public void Trigger(bool inOptions)
-    {
-        Vector2 startPos = panel.GetComponent<RectTransform>().anchoredPosition;
-        if (!inOptions)
-        {
-            panel.GetComponent<RectTransform>().anchoredPosition = Vector2.Lerp(startPos, new(-800f, 0f), 1f);
-            Debug.Log("Moving Canvases");
-        }
-        else if (inOptions)
-        {
-            panel.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, 0f);
-            Debug.Log("Moving Canvases");
-        }
+    public void Trigger(string trigger)
+    {        
+        anim.SetTrigger(trigger);
     }
 }

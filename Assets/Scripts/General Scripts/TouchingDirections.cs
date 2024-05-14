@@ -48,7 +48,7 @@ public class TouchingDirections : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         IsGrounded = touchingCol.isGrounded;
         IsOnWall = (touchingCol.collisionFlags & CollisionFlags.Sides) != 0;

@@ -23,4 +23,10 @@ public class AnimationStrings : MonoBehaviour
     internal static string attackCooldown = "attackCooldown";
     internal static string trigger1 = "trigger1";
     internal static string trigger2 = "trigger2";
+    internal static string pause = "pause";
+    internal static string unpause = "unpause";
+    internal static string options = "options";
+    internal static string optionsExit = "oE";
+    internal static string menuOptions = "mO";
+    internal static string menuOptionsExit = "mOE";
 }
