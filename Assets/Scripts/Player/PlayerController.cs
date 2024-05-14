@@ -134,6 +134,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             pauseCanvas.gameObject.SetActive(true);
+            pauseCanvas.GetComponent<Pause>().Trigger("pause");
             Time.timeScale = 0f;
         }
 
@@ -307,5 +308,11 @@ public class PlayerController : MonoBehaviour
     public void Walk()
     {
         audioSource.PlayOneShot(walk1);
+    }
+
+    public void SpawnObject(GameObject gameObject, Transform transform, float lifetime)
+    {
+        GameObject gameObj = Instantiate(gameObject, transform.position, Quaternion.identity);
+        Destroy(gameObj, lifetime);
     }
 }
